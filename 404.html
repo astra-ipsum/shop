@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0; url=/" />
     <script>
-        var pathname = window.location.pathname;
-        window.location.replace("/shop/?" + pathname);
+        // Get the full path the user was trying to visit
+        var pathname = window.location.pathname + window.location.search + window.location.hash;
+        
+        // Store it in sessionStorage so index.html can restore it
+        sessionStorage.setItem("redirectPath", pathname);
+
+        // Redirect back to the homepage
+        window.location.replace("/shop/");
     </script>
 </head>
 <body>
