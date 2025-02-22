@@ -2,19 +2,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/" />
+    <meta http-equiv="refresh" content="0; url=/shop/" />
     <script>
-        // Get the full path the user was trying to visit
         var pathname = window.location.pathname + window.location.search + window.location.hash;
-        
-        // Store it in sessionStorage so index.html can restore it
         sessionStorage.setItem("redirectPath", pathname);
-
-        // Redirect back to the homepage
         window.location.replace("/shop/");
     </script>
 </head>
 <body>
     Redirecting...
+    <script>
+        // Dynamically inject redirect.js into the index.html page
+        var script = document.createElement("script");
+        script.src = "/shop/redirect.js";
+        document.body.appendChild(script);
+    </script>
 </body>
 </html>
