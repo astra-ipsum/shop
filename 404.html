@@ -2,5 +2,9 @@
     var pathname = window.location.pathname + window.location.search + window.location.hash;
     sessionStorage.setItem("redirectPath", pathname);
     console.log("404.html: Saved redirect path →", pathname);
-    window.location.replace(window.location.pathname);
+    
+    // Delay the redirect to avoid page load conflicts
+    setTimeout(function() {
+        window.location.replace(window.location.pathname);
+    }, 200); // Delay in milliseconds
 </script>
