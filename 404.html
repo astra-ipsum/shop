@@ -2,20 +2,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/shop/" />
+    <title>Redirecting...</title>
     <script>
+        // Capture the original path that caused the 404
         var pathname = window.location.pathname + window.location.search + window.location.hash;
+
+        // Store the path in sessionStorage so it can be restored
         sessionStorage.setItem("redirectPath", pathname);
+
+        // Redirect to the homepage where the script will restore the path
         window.location.replace("/shop/");
     </script>
 </head>
 <body>
-    Redirecting...
-    <script>
-        // Dynamically inject redirect.js into the index.html page
-        var script = document.createElement("script");
-        script.src = "/shop/redirect.js";
-        document.body.appendChild(script);
-    </script>
+    <p>Redirecting...</p>
 </body>
 </html>
