@@ -1,10 +1,16 @@
-<script>
-    var pathname = window.location.pathname + window.location.search + window.location.hash;
-    sessionStorage.setItem("redirectPath", pathname);
-    console.log("404.html: Saved redirect path →", pathname);
-    
-    // Delay the redirect to avoid page load conflicts
-    setTimeout(function() {
-        window.location.replace(window.location.pathname);
-    }, 200); // Delay in milliseconds
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <script>
+        // Redirect to the home page (index.html)
+        window.location.replace("/");  // Adjust to '/' or the homepage URL as needed
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+</body>
+</html>
+
