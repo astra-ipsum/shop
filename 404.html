@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Redirecting...</title>
-    <script>
-        var pathname = window.location.pathname + window.location.search + window.location.hash;
-
-        // Save the path in sessionStorage
-        sessionStorage.setItem("redirectPath", pathname);
-        console.log("404.html: Saved redirect path →", pathname);
-
-        // Redirect to the homepage
-        window.location.replace("/shop/");
-    </script>
-</head>
-<body>
-    <p>Redirecting...</p>
-</body>
-</html>
+<script>
+    var pathname = window.location.pathname + window.location.search + window.location.hash;
+    sessionStorage.setItem("redirectPath", pathname);
+    console.log("404.html: Saved redirect path →", pathname);
+    window.location.replace("/shop/");
+</script>
