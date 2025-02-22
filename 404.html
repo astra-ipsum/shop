@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Redirecting...</title>
     <script>
-        // Capture the original path that caused the 404
         var pathname = window.location.pathname + window.location.search + window.location.hash;
 
-        // Store the path in sessionStorage so it can be restored
+        // Save the path in sessionStorage
         sessionStorage.setItem("redirectPath", pathname);
+        console.log("404.html: Saved redirect path →", pathname);
 
-        // Redirect to the homepage where the script will restore the path test
+        // Redirect to the homepage
         window.location.replace("/shop/");
     </script>
 </head>
