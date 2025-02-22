@@ -1,7 +1,11 @@
 (function() {
+    // Check if there is a stored redirect path
     var redirectPath = sessionStorage.getItem("redirectPath");
+
     if (redirectPath) {
         sessionStorage.removeItem("redirectPath"); // Prevent looping
-        window.history.replaceState({}, "", redirectPath); // Restore the original URL fix
+
+        // Use history.replaceState to restore the correct URL without a full reload
+        window.history.replaceState({}, "", redirectPath);
     }
 })();
