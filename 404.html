@@ -2,5 +2,5 @@
     var pathname = window.location.pathname + window.location.search + window.location.hash;
     sessionStorage.setItem("redirectPath", pathname);
     console.log("404.html: Saved redirect path →", pathname);
-    window.location.replace("/shop/");
+    window.location.replace(window.location.pathname);
 </script>
